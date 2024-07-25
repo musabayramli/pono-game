@@ -1,0 +1,125 @@
+/* Genel stil ayarları */
+body {
+    margin: 0;
+    background-color: #610707;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: "Courier New", Courier, monospace;
+}
+
+/* Canvas stil ayarları */
+canvas {
+    display: none; /* Başlangıçta gizli */
+    background-color: black;
+    position: absolute;
+    z-index: 1;
+    height: 100vh;
+}
+
+/* Kontrol düğmesi stil ayarları */
+button {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(195, 195, 195);
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace;
+    position: relative;
+    z-index: 2;
+}
+
+/* Düğme üzerine gelindiğinde efekt */
+button:hover {
+    filter: brightness(80%);
+}
+
+/* Düğme tıklanırken efekt */
+button:active {
+    transform: scale(0.95);
+}
+
+/* Düğme tıklama odağı */
+button:focus {
+    outline: none;
+}
+
+/* Oyun bitiş ekranı için stil ayarları */
+.game-over-container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 500px;
+    height: 90vh;
+    background-color: rgb(56, 56, 56);
+    margin-top: -4px;
+    z-index: 11;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: whitesmoke;
+}
+
+/* Oyun bitiş ekranı başlığı */
+.game-over-container h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+/* Oyun bitiş ekranı düğmesi */
+.game-over-container button {
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    background-color: rgb(195, 195, 195);
+    border: none;
+    height: 50px;
+    width: 200px;
+    border-radius: 5px;
+    font-size: 20px;
+    font-family: "Courier New", Courier, monospace;
+}
+
+.game-over-container button:hover {
+    filter: brightness(80%);
+}
+
+.game-over-container button:active {
+    transform: scale(0.95);
+}
+
+.game-over-container button:focus {
+    outline: none;
+}
+
+/* Medya sorguları */
+
+/* Büyük ekranlar için ayarlar */
+@media screen and (min-width: 1800px) {
+    canvas {
+        margin-top: 100px;
+    }
+
+    .game-over-container {
+        margin-top: -19px;
+    }
+}
+
+/* Küçük ekranlar (Dikey telefonlar) için ayarlar */
+@media screen and (max-width: 500px) {
+    canvas {
+        width: 100%;
+        height: 700px;
+        margin-top: 50px;
+    }
+
+    .game-over-container {
+        width: 100%;
+        height: 700px;
+    }
+}
